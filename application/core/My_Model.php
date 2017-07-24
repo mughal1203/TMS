@@ -62,6 +62,7 @@ class My_Model extends CI_Model
             $result= $this->db->insert($this->table,$data);
             $id = $this->db->insert_id();
         }else{
+			$timestamp = ['updated_at'=>date("Y-m-d H:i:s")];
             $this->db->update($this->table, $data, $where);
         }
         return $id;

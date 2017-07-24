@@ -73,22 +73,17 @@ class User extends Admin_Controller
                 $this->load->view('layout/layout_main',$this->data);
             }else{
                 $userData = [
-                    'email'         =>  $this->input->post('email'),
-                    'username'      =>  $this->input->post('email'),
                     'first_name'    =>  $this->input->post('first_name'),
                     'last_name'     =>  $this->input->post('last_name'),
-                    'password_hash' =>  $this->hash($this->input->post('password')),
                     'user_type_id'  =>  $this->input->post('Role'),
                     'status_id'     =>  true
                 ];
-                $id = $this->user_m->save($userData);
+                $id = $this->user_m->save($userData,['user_id'=>$id]);
                 $userAddress = [
-                    'user_id'   => $id,
                     'city'  => $this->input->post('city'),
                     'address'   => $this->input->post('address')
                 ];
                 $userPhone = [
-                    'user_id'       => $id,
                     'primary_no'    => $this->input->post('primary_no'),
                     'secondary_no'  => $this->input->post('secondary_no')
                 ];
