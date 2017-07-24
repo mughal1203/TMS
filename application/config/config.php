@@ -31,7 +31,7 @@ function __autoload($classname){
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/GCProject';
+$config['base_url'] = 'https://mughal1203.github.io/TMS';
 
 /*
 |--------------------------------------------------------------------------
